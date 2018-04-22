@@ -17,7 +17,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -156,7 +155,6 @@ public class Funcionario implements Serializable{
 	}
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@Column(name = "empresa",nullable = true)
 	public Empresa getEmpresa() {
 		return empresa;
 	}
@@ -165,7 +163,6 @@ public class Funcionario implements Serializable{
 	}
 	
 	@OneToMany(mappedBy = "funcionario",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@Column(name = "lancamento",nullable = true)
 	public List<Lancamento> getLancamento() {
 		return lancamento;
 	}
