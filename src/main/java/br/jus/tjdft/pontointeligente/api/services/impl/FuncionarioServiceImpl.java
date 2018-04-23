@@ -35,16 +35,10 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 		log.info("Buscando funcionario por email: {}", email);
 		return Optional.ofNullable(this.funcionarioRepository.findByEmail(email));
 	}
-/*
-	@Override
-	public Optional<Funcionario> buscarPorId(Long id) {
-		log.info("Buscando funcionario por id: {}", id);
-		return Optional.ofNullable(this.funcionarioRepository.findOne(id));
-	}*/
 
 	@Override
 	public Optional<Funcionario> buscarPorId(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("Buscando funcionario por id: {}", id);
+		return this.funcionarioRepository.findById(id);
 	}
 }
